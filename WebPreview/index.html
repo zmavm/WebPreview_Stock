@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>台股看盤儀表板｜瀏覽器預覽</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div><p class="eyebrow">BROWSER PREVIEW</p><h1>股票看盤儀表板</h1></div>
+      <div class="live"><i></i><span>台北時間</span><time id="clock"></time></div>
+    </header>
+
+    <section class="toolbar" aria-label="股票設定">
+      <label>股票代碼<input id="symbol" value="0050.TW" placeholder="例如：0050.TW" maxlength="12"></label>
+      <label>時間範圍<select id="period"><option value="22">1 個月</option><option value="66">3 個月</option><option value="132" selected>6 個月</option><option value="252">1 年</option><option value="504">2 年</option><option value="900">5 年</option></select></label>
+      <button id="refresh" type="button">↻ 刷新資料</button>
+      <p id="notice" role="status">正在讀取市場資料…</p>
+    </section>
+
+    <section class="metrics" id="metrics" aria-label="最新行情"></section>
+    <section class="company-card" id="company-card" aria-label="標的介紹"></section>
+    <section class="chart-card"><div class="card-head"><div><h2 id="chart-title">0050.TW K 線與均線走勢圖</h2><p>移過圖表可同步查看價格與成交量日期</p></div><div class="legend"><span class="ma5">MA5</span><span class="ma20">MA20</span><span class="ma60">MA60</span></div></div><canvas id="price-chart"></canvas></section>
+    <section class="chart-card volume-card"><div class="card-head"><div><h2>成交量</h2><p>單位：股</p></div></div><canvas id="volume-chart"></canvas></section>
+    <section class="analysis" id="analysis"></section>
+    <footer>行情取自 Yahoo Finance 日線資料；若讀取失敗不會顯示替代行情。資訊不構成投資建議。</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

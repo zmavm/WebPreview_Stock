@@ -1,0 +1,21 @@
+name: TaiwanStockViewer
+options:
+  deploymentTarget:
+    iOS: "16.0"
+settings:
+  base:
+    PRODUCT_BUNDLE_IDENTIFIER: com.example.TaiwanStockViewer
+    SWIFT_VERSION: 5.9
+targets:
+  TaiwanStockViewer:
+    type: application
+    platform: iOS
+    sources:
+      - path: TaiwanStockViewer
+    settings:
+      base:
+        INFOPLIST_KEY_CFBundleDisplayName: 台股看盤
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.finance
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait
